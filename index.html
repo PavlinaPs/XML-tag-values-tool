@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hodnoty XML tagu</title>
+</head>
+
+<body>
+
+  <main>
+    <h1>XML feed: hodnoty vybraného tagu</h1>
+    <form id="form">
+      <label for="fileName">Přesný název souboru</label>
+      <input id="fileName" type="text" placeholder="název souboru včetně přípony .xml">
+      <label for="tagName">Tag</label>
+      <input id="tagName" type="text" placeholder="tag bez <>">
+      <button id="submit" type="submit">Vypsat hodnoty</button>
+    </form>
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Hodnota</th>
+          <th>Četnost</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>

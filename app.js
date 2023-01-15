@@ -4,6 +4,7 @@ const form = document.getElementById("form");
 const tableBody = document.getElementById("tableBody");
 const resetTag = document.getElementById("reset-tag");
 const resetFilename = document.getElementById("reset-filename");
+const resetResult = document.getElementById("reset-result");
 
 const fetchValues = async (name1, name2) => {
   let tagValuesArray = [];
@@ -40,4 +41,16 @@ const fetchValues = async (name1, name2) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetchValues(fileName.value, tagName.value);
+});
+
+resetTag.addEventListener("click", () => {
+  tagName.value = "";
+  tagValuesArray = [];
+});
+
+resetFilename.addEventListener("click", () => (fileName.value = ""));
+
+resetResult.addEventListener("click", () => {
+  tagValuesArray = [];
+  tableBody.innerHTML = "";
 });

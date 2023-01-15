@@ -5,6 +5,7 @@ const tableBody = document.getElementById("tableBody");
 const resetTag = document.getElementById("reset-tag");
 const resetFilename = document.getElementById("reset-filename");
 const resetResult = document.getElementById("reset-result");
+const clearAll = document.getElementById("clear-all");
 
 const fetchValues = async (name1, name2) => {
   let tagValuesArray = [];
@@ -19,7 +20,11 @@ const fetchValues = async (name1, name2) => {
       tagValuesArray.push(tagValue);
     });
   } catch (err) {
-    console.log(err);
+    if (name1 === "") {
+      alert(
+        "XML soubor není k dispozici. Zkontrolujte, prosím, zda je xml soubor ve složce xml-tag-values"
+      );
+    }
   }
 
   let valuesObject = tagValuesArray.reduce((acc, cur) => {
@@ -51,6 +56,13 @@ resetTag.addEventListener("click", () => {
 resetFilename.addEventListener("click", () => (fileName.value = ""));
 
 resetResult.addEventListener("click", () => {
+  tagValuesArray = [];
+  tableBody.innerHTML = "";
+});
+
+clearAll.addEventListener("click", () => {
+  tagName.value = "";
+  fileName.value = "";
   tagValuesArray = [];
   tableBody.innerHTML = "";
 });

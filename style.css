@@ -1,0 +1,135 @@
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.6rem;
+  background-image: radial-gradient(
+    circle,
+    #ffffef,
+    #fcfade,
+    #f9f5cc,
+    #f8efbb,
+    #f7e9a9
+  );
+}
+
+.tool {
+  width: 60rem;
+  min-height: 80vh;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #ffffef;
+  box-shadow: 4.5px 4px 12.5px -10px rgba(0, 0, 0, 0.024),
+    9px 8px 23px -10px rgba(0, 0, 0, 0.034),
+    14.1px 12.5px 30.7px -10px rgba(0, 0, 0, 0.041),
+    20.7px 18.4px 36px -10px rgba(0, 0, 0, 0.046),
+    32.5px 28.8px 46.3px -10px rgba(0, 0, 0, 0.052),
+    71px 63px 80px -10px rgba(0, 0, 0, 0.07);
+}
+
+h1 {
+  grid-area: title;
+  font-size: 2rem;
+  text-align: center;
+}
+
+label {
+  margin-left: 1rem;
+}
+
+button {
+  width: 20rem;
+  height: 3rem;
+  padding: 0 1rem 0.2rem;
+  font: inherit;
+  font-size: 1.2rem;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  color: white;
+  background-color: #fd7e14;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 1.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:hover,
+button:focus {
+  background-image: linear-gradient(90deg, #ff5925 100%, #f77942 0);
+  box-shadow: 0 7px 15px 0 rgb(0 0 0 / 10%);
+  transition: all 0.2s ease;
+}
+
+input {
+  display: block;
+  width: 96.5%;
+  height: 3rem;
+  margin-block: 1rem;
+  padding: 0 1rem 0.2rem;
+  font: inherit;
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
+  outline: none;
+  border: 1.4px solid gray;
+  background-color: white;
+}
+
+input::placeholder {
+  color: lightgrey;
+}
+
+input:focus {
+  border: 1px solid black;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-name,
+.tag-name {
+  display: block;
+}
+
+.submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reset-buttons-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+table {
+  width: 100%;
+  margin: 3rem auto 2rem;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid gray;
+  text-align: center;
+}

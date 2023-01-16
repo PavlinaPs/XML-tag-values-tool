@@ -10,7 +10,12 @@ const clearAll = document.getElementById("clear-all");
 const fetchValues = async (name1, name2) => {
   let tagValuesArray = [];
   try {
-    const response = await fetch(name1);
+    const response = await fetch(`../${name1}`);
+    if (name1 === "") {
+      alert(
+        "XML soubor není k dispozici. Zkontrolujte, prosím, zda je xml soubor ve složce xml-tag-values"
+      );
+    }
     data = await response.text();
     const parser = new DOMParser();
     const xmlDOM = parser.parseFromString(data, "text/xml");
@@ -20,11 +25,7 @@ const fetchValues = async (name1, name2) => {
       tagValuesArray.push(tagValue);
     });
   } catch (err) {
-    if (name1 === "") {
-      alert(
-        "XML soubor není k dispozici. Zkontrolujte, prosím, zda je xml soubor ve složce xml-tag-values"
-      );
-    }
+    console.log(err);
   }
 
   let valuesObject = tagValuesArray.reduce((acc, cur) => {
@@ -34,10 +35,13 @@ const fetchValues = async (name1, name2) => {
     };
   }, {});
 
-  for (const [key, value] of Object.entries(valuesObject)) {
+  let entries = Object.entries(valuesObject);
+  let sortedEntries = entries.sort((a, b) => b[1] - a[1]);
+
+  for (const entry of sortedEntries) {
     let row = `<tr>
-                <td>${key}</td>
-                <td>${value}</td>
+                <td>${entry[0]}</td>
+                <td>${entry[1]}</td>
               </tr>`;
     tableBody.innerHTML += row;
   }

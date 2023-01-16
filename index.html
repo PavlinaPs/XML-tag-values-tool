@@ -6,24 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hodnoty XML tagu</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <main>
-    <h1>XML feed: hodnoty vybraného tagu</h1>
+  <main class="tool">
+    <h1>Hodnoty vybraného tagu XML feedu</h1>
     <form id="form">
-      <label for="fileName">Přesný název souboru</label>
-      <input id="fileName" type="text" placeholder="název souboru včetně přípony .xml">
-      <label for="tagName">Tag</label>
-      <input id="tagName" type="text" placeholder="tag bez <>">
-      <button id="submit" type="submit">Vypsat hodnoty</button>
+      <div class="input-container">
+        <label for="fileName" class="file-name">Přesný název souboru</label>
+        <button id="reset-filename">Vymaž název souboru</button>
+      </div>
+      <input id="fileName" type="text" placeholder="Název souboru včetně přípony .xml">
+
+      <div class="input-container">
+        <label for="tagName" class="tag-name">Tag</label>
+        <button id="reset-tag" tabindex="-1">Vymaž tag</button>
+      </div>
+      <input id="tagName" type="text" placeholder="Tag bez závorek <>">
+
+      <button id="submit" class="submit" type="submit">Vypsat hodnoty</button>
     </form>
-    <button id="reset-tag">Vymaž tag</button>
-    <button id="reset-filename">Vymaž název souboru</button>
-    <button id="reset-result">Vymaž výsledky</button>
-    <button id="clear-all">Vymaž vše</button>
-    <table id="table">
+
+    <table id="table" class="table">
       <thead>
         <tr>
           <th>Hodnota</th>
@@ -32,6 +38,11 @@
       </thead>
       <tbody id="tableBody"></tbody>
     </table>
+
+    <div class="reset-buttons-container">
+      <button id="reset-result">Vymaž výsledky</button>
+      <button id="clear-all">Vymaž vše</button>
+    </div>
 
   </main>
   <script src="app.js"></script>
